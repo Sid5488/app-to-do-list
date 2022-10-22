@@ -1,0 +1,63 @@
+.container {
+  max-width: 75rem;
+
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.container > form {  
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.input-todo {
+  width: 39.875rem;
+  height: 3.375rem;
+
+  border: 0;
+  outline: none;
+  border-radius: 8px;
+
+  padding: 8px;
+
+  background: var(--gray-500);
+  color: var(--gray-100);
+}
+
+form > button {
+  width: 5.625rem;
+  height: 3.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  outline: none;
+  border-radius: 8px;
+
+  background: var(--blue-dark);
+  color: var(--gray-100);
+
+  font-size: bold;
+
+  margin: 0 0.5rem;
+
+  transition: 0.1s background;
+}
+
+button > svg {
+  margin: 0.1rem;
+}
+
+form > button:not(.button-block):hover {
+  background: var(--blue);
+}
+
+.button-block {
+  cursor: not-allowed;
+}
