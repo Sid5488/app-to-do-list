@@ -39,9 +39,14 @@ or unzip project.
   ```bash 
     yarn dev
   ```
-  3. Or you can run both commands together;
+  3. Or you can run both commands together (Linux);
   ```bash 
     yarn install && yarn dev
+  ```
+
+  4. Or you can run both commands together (Windows);
+  ```bash 
+    yarn install; yarn dev
   ```
 
 - Run with npm
@@ -53,7 +58,11 @@ or unzip project.
   ```bash 
     npm dev
   ```
-  3. Or you can run both commands together;
+  3. Or you can run both commands together (Linux);
   ```bash 
     npm install && npm run dev
+  ```
+  4. Or you can run both commands together (Windows);
+  ```bash 
+    npm install; npm run dev
   ```
