@@ -21,15 +21,37 @@ const Tasks: React.FC<ITasksProps> = ({ task }: ITasksProps) => {
   };
 
   const changeStatusTask = (id: string, status: boolean): void => {
-    const listTasksCompleteds = tasks.filter(item => item.id === id);
+    const listTasksCompleteds = tasks.filter(item => item.id === id)[0];
+
+    const updatedTasks = tasks.map(item => {
+      if(item.id === id) {
+        const updated: ITask = {
+          id: listTasksCompleteds.id,
+          status,
+          content: listTasksCompleteds.content
+        };
+
+        return updated;
+      }
+
+      return item;
+    });
 
     if(listTasksCompleteds) {
       setTasksCompleted(state => status ? state +1 : state -1);
+      setTasks(updatedTasks);
     }
   };
 
   const deleteTask = (id: string): void => {
     const listTask = tasks.filter(item => item.id !== id);
+    const taskToDelete = tasks.filter(item => item.id === id)[0];
+
+    setTasksCompleted(state => {
+      if(taskToDelete.status)
+        return state -1;
+      return state;
+    });
 
     setTasks(listTask);
   };
